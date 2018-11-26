@@ -18,5 +18,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | s
 #fail 2
 #RUN /bin/bash -c "source ~/.profile"
 #RUN nvm install v10.13.0
-#method 3
-RUN . "$NVM_DIR/nvm.sh" && v10.13.0
+#fail 3
+#RUN . "$NVM_DIR/nvm.sh" && v10.13.0
+#method 4
+RUN ["/bin/bash","-c","source ~/.profile"]
