@@ -1,7 +1,7 @@
 From kennethtjlin/ubuntu-nodejs:latest
 MAINTAINER kenneth
 
-ENV DEBIAN_FRONTEND noninteractive
+#ENV DEBIAN_FRONTEND noninteractive
 
 #install environment
 #RUN apt-get update
