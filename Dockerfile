@@ -39,4 +39,5 @@ MAINTAINER kenneth
 # && nvm install v10.13.0
 #method 9
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash
-RUN bash -i -c "source ~/.profile";
+#RUN bash -i -c "source ~/.profile";
+RUN ["/bin/bash","-c","source ~/.profile"]
