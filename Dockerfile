@@ -43,6 +43,9 @@ MAINTAINER kenneth
 #RUN ["/bin/bash","-c","source ~/.profile"]
 #method 10
 ENV NVM_DIR /root/.nvm
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash
-RUN rm /bin/sh && ln -s /bin/bash /bin/shRUN rm /bin/sh && ln -s /bin/bash /bin/sh
-RUN source $NVM_DIR/nvm.sh
+ENV NODE_VERSION v10.13.0
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash \
+&& rm /bin/sh && ln -s /bin/bash /bin/sh \
+&& source $NVM_DIR/nvm.sh \
+&& nvm install $NODE_VERSION
+
