@@ -33,7 +33,10 @@ MAINTAINER kenneth
 # && source ~/.profile \
 # && nvm install v10.13.0
 #method 8 
-ENV NVM_DIR /root/.nvm
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash \
- && source ~/.profile \
- && nvm install v10.13.0
+#ENV NVM_DIR /root/.nvm
+#RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash \
+# && source ~/.profile \
+# && nvm install v10.13.0
+#method 9
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash
+RUN bash -i -c "source ~/.profile";
