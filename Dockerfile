@@ -12,7 +12,7 @@ MAINTAINER kenneth
 #RUN apt-get install -y build-essential libssl-dev
 
 #install NVM
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | sh
+#RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | sh
 #fail 1
 #RUN source ~/.profile
 #fail 2
@@ -26,5 +26,9 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | s
 #RUN ~/.profile
 #RUN nvm install v10.13.0
 #method 6
-RUN export PATH=$PATH:/root/.nvm
-RUN ["/bin/bash","-c","nvm install v10.13.0"]
+#RUN export PATH=$PATH:/root/.nvm
+#RUN ["/bin/bash","-c","nvm install v10.13.0"]
+#method 7
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | sh \
+    source ~/.profile \
+    nvm install v10.13.0
