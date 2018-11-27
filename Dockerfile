@@ -29,6 +29,11 @@ MAINTAINER kenneth
 #RUN export PATH=$PATH:/root/.nvm
 #RUN ["/bin/bash","-c","nvm install v10.13.0"]
 #method 7
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | sh \
+#RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash \
+# && source ~/.profile \
+# && nvm install v10.13.0
+#method 8 
+ENV NVM_DIR /root/.nvm
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash \
  && source ~/.profile \
  && nvm install v10.13.0
