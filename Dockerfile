@@ -45,7 +45,6 @@ MAINTAINER kenneth
 ENV NVM_DIR /root/.nvm
 ENV NODE_VERSION v10.13.0
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash \
-&& rm /bin/sh && ln -s /bin/bash /bin/sh \
-&& source $NVM_DIR/nvm.sh \
+&& . $NVM_DIR/nvm.sh \
 && nvm install $NODE_VERSION
 
