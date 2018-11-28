@@ -20,3 +20,5 @@ ENV PATH $NODE_PATH:$PATH
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash \
 && . $NVM_DIR/nvm.sh \
 && nvm install $NODE_VERSION
+
+#test
