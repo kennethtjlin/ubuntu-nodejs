@@ -1,4 +1,4 @@
-From kennethtjlin/ubuntu-nodejs:latest
+From kennethtjlin/ubuntu:latest
 MAINTAINER kenneth
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -20,5 +20,3 @@ ENV PATH $NODE_PATH:$PATH
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash \
 && . $NVM_DIR/nvm.sh \
 && nvm install $NODE_VERSION
-
-#install MongoDB
