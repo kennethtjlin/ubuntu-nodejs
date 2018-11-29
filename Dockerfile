@@ -1,24 +1,19 @@
-From kennethtjlin/ubuntu:latest
+From kennethtjlin/ubuntu-nodejs:v0
 MAINTAINER kenneth
 
 ENV DEBIAN_FRONTEND noninteractive
 
-#install environment
+#install apt key
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+RUN echo "deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 RUN apt-get update
-RUN apt-get install -y python-software-properties
-RUN apt-get install -y curl
 
-#install build environment
-RUN apt-get install -y build-essential libssl-dev
+#install mongodb
+RUN apt-get install -y mongodb-org
 
-#install NVM
-ENV NVM_DIR /root/.nvm
-ENV NODE_VERSION v10.13.0
-ENV NODE_PATH $NVM_DIR/versions/$NODE_VERSION/bin
-ENV PATH $NODE_PATH:$PATH
+#create mongo directory
+RUN mkdir /data/
+RUN mkdir /data/db
 
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash \
-&& . $NVM_DIR/nvm.sh \
-&& nvm install $NODE_VERSION
-
-#test
+#run mongo service
+RUN mongod &
